@@ -23,19 +23,6 @@ class index(ListView):
 #    return render(request, 'index.html')
 
 
-#def movie_list(request):
-#    movie_list = Movie.objects.all()
-#    paginator = Paginator(movie_list, 5)  # Show 25 contacts per page.
-#
-#    page_number = request.GET.get("page_number")
-#    page_obj = paginator.get_page(page_number)
-#    
-#    return render(request, 'movie_list.html', {
-#        'object_list': page_obj.object_list,
-#        'page_obj': page_obj, 
-#    })
-   
-
 class movie_list(ListView):
     #template_name = 'movie_list.html'
     model = Movie
@@ -50,27 +37,6 @@ class movie_list(ListView):
         return 'index.html'
     
 
-
-#class add_movie(TemplateView):
-#    template_name = 'movie_form.html'
-#    model = Movie
-#    def get(self, *args, **kwargs):
-#        formset = BirdFormSet(queryset=Bird.objects.none())
-#        return self.render_to_response({'bird_formset': formset})
-#
-#    # Define method to handle POST request
-#    def post(self, *args, **kwargs):
-#
-#        formset = BirdFormSet(data=self.request.POST)
-#
-#        # Check if submitted forms are valid
-#        if formset.is_valid():
-#            formset.save()
-#            return redirect(reverse_lazy("bird_list"))
-#
-#        return self.render_to_response({'bird_formset': formset})
-    
-    
     
 def add_movie(request):
     
