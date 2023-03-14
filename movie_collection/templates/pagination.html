@@ -1,0 +1,18 @@
+
+<div class="pagination d-flex flex-between-center pt-3">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+        <a href="?page=1"class="btn btn-sm btn-primary px-4 ms-2"><span>Primeiro</span></a>
+        <a href="?page={{ page_obj.previous_page_number }}"class="btn btn-sm btn-primary px-4 ms-2"><span>Anterior</span></a>
+    {% endif %}
+
+    <span class="current">
+        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}"class="btn btn-sm btn-primary px-4 ms-2"><span>Próximo</span></a>
+        <a href="?page={{ page_obj.paginator.num_pages }}"class="btn btn-sm btn-primary px-4 ms-2"><span>último</span></a>
+    {% endif %}
+</span>
+</div>
